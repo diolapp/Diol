@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~  Copyright (C) 2019  The Diol App Team
+  ~
+  ~  This program is free software: you can redistribute it and/or modify
+  ~  it under the terms of the GNU General Public License as published by
+  ~  the Free Software Foundation, either version 3 of the License, or
+  ~  (at your option) any later version.
+  ~
+  ~  This program is distributed in the hope that it will be useful,
+  ~  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~  GNU General Public License for more details.
+  ~
+  ~  You should have received a copy of the GNU General Public License
+  ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/ec_container_height"
+    android:background="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:paddingStart="@dimen/call_entry_text_left_margin">
+
+    <TextView
+        android:id="@+id/multimedia_details"
+        style="@style/Dialer.TextAppearance.Secondary.Ellipsize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="1dp"
+        android:maxLines="2" />
+
+    <FrameLayout
+        android:id="@+id/multimedia_image_container"
+        android:layout_width="@dimen/ec_photo_size"
+        android:layout_height="@dimen/ec_photo_size"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="@dimen/call_entry_padding"
+        android:background="@drawable/multimedia_image_background"
+        android:clickable="true"
+        android:foreground="?attr/selectableItemBackground"
+        android:outlineProvider="background"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/multimedia_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:id="@+id/multimedia_attachments_number"
+            style="@style/Dialer.TextAppearance.Header2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textColor="?android:attr/textColorPrimaryInverse"
+            android:textSize="20sp"
+            android:visibility="gone" />
+    </FrameLayout>
+</RelativeLayout>

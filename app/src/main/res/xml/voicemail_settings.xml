@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~  Copyright (C) 2019  The Diol App Team
+  ~
+  ~  This program is free software: you can redistribute it and/or modify
+  ~  it under the terms of the GNU General Public License as published by
+  ~  the Free Software Foundation, either version 3 of the License, or
+  ~  (at your option) any later version.
+  ~
+  ~  This program is distributed in the hope that it will be useful,
+  ~  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~  GNU General Public License for more details.
+  ~
+  ~  You should have received a copy of the GNU General Public License
+  ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:title="@string/voicemail_settings_title">
+
+    <Preference
+        android:key="@string/voicemail_notifications_key"
+        android:title="@string/voicemail_notifications_preference_title" />
+
+    <Preference
+        android:key="@string/voicemail_change_greeting_key"
+        android:title="@string/voicemail_change_greeting_preference_title" />
+
+    <SwitchPreference
+        android:key="@string/voicemail_visual_voicemail_key"
+        android:title="@string/voicemail_visual_voicemail_switch_title" />"
+
+    <SwitchPreference
+        android:dependency="@string/voicemail_visual_voicemail_key"
+        android:key="@string/voicemail_visual_voicemail_archive_key"
+        android:title="@string/voicemail_visual_voicemail_auto_archive_switch_title" />"
+
+    <app.diol.dialer.common.preference.SwitchPreferenceWithClickableSummary
+        android:dependency="@string/voicemail_visual_voicemail_key"
+        android:key="@string/voicemail_visual_voicemail_transcription_key"
+        android:title="@string/voicemail_visual_voicemail_transcription_switch_title"
+        app:urlToOpen="@string/transcription_learn_more_url" />
+
+    <app.diol.dialer.common.preference.SwitchPreferenceWithClickableSummary
+        android:dependency="@string/voicemail_visual_voicemail_transcription_key"
+        android:key="@string/voicemail_visual_voicemail_donation_key"
+        android:title="@string/voicemail_visual_voicemail_donation_switch_title"
+        app:urlToOpen="@string/donation_learn_more_url" />
+
+    <Preference
+        android:key="@string/voicemail_change_pin_key"
+        android:title="@string/voicemail_change_pin_preference_title" />
+
+    <PreferenceScreen
+        android:key="@string/voicemail_advanced_settings_key"
+        android:title="@string/voicemail_advanced_settings_title"></PreferenceScreen>
+
+</PreferenceScreen>

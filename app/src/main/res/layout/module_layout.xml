@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~  Copyright (C) 2019  The Diol App Team
+  ~
+  ~  This program is free software: you can redistribute it and/or modify
+  ~  it under the terms of the GNU General Public License as published by
+  ~  the Free Software Foundation, either version 3 of the License, or
+  ~  (at your option) any later version.
+  ~
+  ~  This program is distributed in the hope that it will be useful,
+  ~  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~  GNU General Public License for more details.
+  ~
+  ~  You should have received a copy of the GNU General Public License
+  ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/module_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
+    android:orientation="horizontal">
+
+    <!-- The icon is not important for a11y as it is not clickable. -->
+    <ImageView
+        android:id="@+id/module_image"
+        android:layout_width="@dimen/contact_actions_image_size"
+        android:layout_height="@dimen/contact_actions_image_size"
+        android:layout_marginStart="@dimen/contact_actions_image_margin"
+        android:layout_marginEnd="@dimen/contact_actions_image_margin"
+        android:importantForAccessibility="no"
+        android:scaleType="center" />
+
+    <TextView
+        android:id="@+id/module_text"
+        style="@style/Dialer.TextAppearance.Primary.Ellipsize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical" />
+</LinearLayout>

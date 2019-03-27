@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~  Copyright (C) 2019  The Diol App Team
+  ~
+  ~  This program is free software: you can redistribute it and/or modify
+  ~  it under the terms of the GNU General Public License as published by
+  ~  the Free Software Foundation, either version 3 of the License, or
+  ~  (at your option) any later version.
+  ~
+  ~  This program is distributed in the hope that it will be useful,
+  ~  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~  GNU General Public License for more details.
+  ~
+  ~  You should have received a copy of the GNU General Public License
+  ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+
+<!-- Layout parameters are set programmatically. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/call_log_fragment_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/multi_select_select_all_view_content"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tab_height"
+        android:layout_gravity="start"
+        android:background="?attr/colorPrimary"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/select_all_view_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/select_all"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/select_all_icon_padding"
+            android:paddingRight="@dimen/select_all_icon_padding"
+            app:srcCompat="@drawable/ic_empty_check_mark_white_24dp" />
+
+        <TextView
+            android:id="@+id/select_all_view_text"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/select_all_text_left_padding"
+            android:text="@string/select_all"
+            android:textAllCaps="true"
+            android:textColor="?android:attr/textColorPrimaryInverse"
+            android:textSize="@dimen/select_all_text_size" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/modal_message_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:paddingStart="@dimen/call_log_horizontal_margin"
+        android:paddingEnd="@dimen/call_log_horizontal_margin"
+        android:paddingBottom="@dimen/floating_action_button_list_bottom_padding" />
+
+    <app.diol.dialer.widget.EmptyContentView
+        android:id="@+id/empty_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:gravity="center_vertical" />
+
+</LinearLayout>

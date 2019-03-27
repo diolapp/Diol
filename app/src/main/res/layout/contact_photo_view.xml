@@ -1,0 +1,75 @@
+<!--
+  ~  Copyright (C) 2019  The Diol App Team
+  ~
+  ~  This program is free software: you can redistribute it and/or modify
+  ~  it under the terms of the GNU General Public License as published by
+  ~  the Free Software Foundation, either version 3 of the License, or
+  ~  (at your option) any later version.
+  ~
+  ~  This program is distributed in the hope that it will be useful,
+  ~  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~  GNU General Public License for more details.
+  ~
+  ~  You should have received a copy of the GNU General Public License
+  ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+
+<!-- A FrameLayout for displaying a contact photo and its optional badge -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="56dp"
+    android:layout_height="48dp"
+    android:layout_gravity="center"
+    android:focusable="false">
+
+    <QuickContactBadge
+        android:id="@+id/quick_contact_photo"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center"
+        android:padding="4dp" />
+
+    <!--
+        A container layout that contains a background and badges
+        (video call badge, RTT call badge, etc)
+
+        The container and its children are too small to meet the accessibility requirement that the
+        touchable area of focusable items should be at least 48dp x 48dp. We have to mark all of them
+        as not important for accessibility.
+    -->
+    <FrameLayout
+        android:id="@+id/contact_badge_container"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="2dp"
+        android:importantForAccessibility="noHideDescendants">
+
+        <ImageView
+            android:id="@+id/contact_badge_background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/contact_photo_badge_background"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/video_call_badge"
+            android:layout_width="13dp"
+            android:layout_height="13dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/quantum_ic_videocam_vd_white_24"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/rtt_call_badge"
+            android:layout_width="13dp"
+            android:layout_height="13dp"
+            android:layout_gravity="center"
+            android:tint="?android:attr/colorBackground"
+            app:srcCompat="@drawable/quantum_ic_rtt_vd_theme_24"
+            tools:ignore="ContentDescription" />
+    </FrameLayout>
+</FrameLayout>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~  Copyright (C) 2019  The Diol App Team
+  ~
+  ~  This program is free software: you can redistribute it and/or modify
+  ~  it under the terms of the GNU General Public License as published by
+  ~  the Free Software Foundation, either version 3 of the License, or
+  ~  (at your option) any later version.
+  ~
+  ~  This program is distributed in the hope that it will be useful,
+  ~  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~  GNU General Public License for more details.
+  ~
+  ~  You should have received a copy of the GNU General Public License
+  ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+
+<animated-selector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt">
+    <item
+        android:id="@+id/hd_attempting"
+        android:drawable="@drawable/avd_hd_attempting"
+        android:state_activated="false" />
+    <item
+        android:id="@+id/hd_enabled"
+        android:drawable="@drawable/quantum_ic_hd_vd_theme_24"
+        android:state_activated="true" />
+
+    <transition
+        android:fromId="@id/hd_attempting"
+        android:toId="@id/hd_enabled">
+        <animated-vector android:drawable="@drawable/vd_hd_attempting">
+            <target android:name="hdMask">
+                <aapt:attr name="android:animation">
+                    <objectAnimator
+                        android:duration="150"
+                        android:propertyName="pathData"
+                        android:startOffset="45"
+                        android:valueFrom="M12, 12 m 0, -9 a 9,9 0 1,1 0,18 a 9,9 0 1,1 0,-18"
+                        android:valueTo="M12, 12 m 0, -18 a 18,18 0 1,1 0,36 a 18,18 0 1,1 0,-36"
+                        android:valueType="pathType" />
+                </aapt:attr>
+            </target>
+
+            <target android:name="hdRoot">
+                <aapt:attr name="android:animation">
+                    <set android:ordering="sequentially">
+                        <set>
+                            <objectAnimator
+                                android:duration="45"
+                                android:interpolator="@anim/hd_scale_interpolator"
+                                android:propertyName="scaleX"
+                                android:valueFrom="1"
+                                android:valueTo="0.9" />
+                            <objectAnimator
+                                android:duration="45"
+                                android:interpolator="@anim/hd_scale_interpolator"
+                                android:propertyName="scaleY"
+                                android:valueFrom="1"
+                                android:valueTo="0.9" />
+                        </set>
+                        <set>
+                            <objectAnimator
+                                android:duration="120"
+                                android:interpolator="@anim/hd_scale_interpolator2"
+                                android:propertyName="scaleX"
+                                android:valueFrom="0.9"
+                                android:valueTo="1.2" />
+                            <objectAnimator
+                                android:duration="120"
+                                android:interpolator="@anim/hd_scale_interpolator2"
+                                android:propertyName="scaleY"
+                                android:valueFrom="0.9"
+                                android:valueTo="1.2" />
+                        </set>
+                        <set>
+                            <objectAnimator
+                                android:duration="120"
+                                android:interpolator="@anim/hd_scale_interpolator2"
+                                android:propertyName="scaleX"
+                                android:valueFrom="1.2"
+                                android:valueTo="1" />
+                            <objectAnimator
+                                android:duration="120"
+                                android:interpolator="@anim/hd_scale_interpolator2"
+                                android:propertyName="scaleY"
+                                android:valueFrom="1.2"
+                                android:valueTo="1" />
+                        </set>
+                    </set>
+                </aapt:attr>
+            </target>
+
+            <target android:name="root">
+                <aapt:attr name="android:animation">
+                    <objectAnimator
+                        android:duration="150"
+                        android:interpolator="@android:interpolator/fast_out_slow_in"
+                        android:propertyName="alpha"
+                        android:startOffset="45"
+                        android:valueFrom="0.5"
+                        android:valueTo="1" />
+                </aapt:attr>
+            </target>
+        </animated-vector>
+    </transition>
+
+</animated-selector>

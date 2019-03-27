@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~  Copyright (C) 2019  The Diol App Team
+  ~
+  ~  This program is free software: you can redistribute it and/or modify
+  ~  it under the terms of the GNU General Public License as published by
+  ~  the Free Software Foundation, either version 3 of the License, or
+  ~  (at your option) any later version.
+  ~
+  ~  This program is distributed in the hope that it will be useful,
+  ~  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~  GNU General Public License for more details.
+  ~
+  ~  You should have received a copy of the GNU General Public License
+  ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/voicemail_media_player_padding_top">
+
+    <TextView
+        android:id="@+id/playback_state_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/voicemail_media_player_state"
+        android:textSize="@dimen/voicemail_playback_state_text_size"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/playback_position_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:importantForAccessibility="no"
+            android:text="@string/voicemail_media_player_inital_start_position"
+            android:textSize="@dimen/voicemail_duration_size" />
+
+        <!-- TODO(uabdullah): Add listener to seekbar -->
+        <SeekBar
+            android:id="@+id/playback_seek"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:max="0"
+            android:progress="0" />
+
+        <TextView
+            android:id="@+id/playback_seek_total_duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:importantForAccessibility="no"
+            android:textSize="@dimen/voicemail_duration_size" />
+    </LinearLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingTop="10dp"
+        android:weightSum="4">
+
+        <ImageButton
+            android:id="@+id/pauseButton"
+            style="@style/voicemail_media_player_buttons"
+            android:layout_weight="1"
+            android:contentDescription="@string/a11y_voicemail_entry_pause"
+            android:visibility="gone"
+            app:srcCompat="@drawable/quantum_ic_pause_vd_theme_24" />
+
+        <ImageButton
+            android:id="@+id/playButton"
+            style="@style/voicemail_media_player_buttons"
+            android:layout_weight="1"
+            android:contentDescription="@string/a11y_voicemail_entry_play"
+            app:srcCompat="@drawable/quantum_ic_play_arrow_vd_theme_24" />
+
+
+        <ImageButton
+            android:id="@+id/speakerButton"
+            style="@style/voicemail_media_player_buttons"
+            android:layout_weight="1"
+            android:contentDescription="@string/a11y_voicemail_entry_speaker"
+            app:srcCompat="@drawable/quantum_ic_volume_up_vd_theme_24" />
+
+
+        <ImageButton
+            android:id="@+id/phoneButton"
+            style="@style/voicemail_media_player_buttons"
+            android:layout_weight="1"
+            android:contentDescription="@string/a11y_voicemail_entry_call"
+            app:srcCompat="@drawable/quantum_ic_phone_vd_theme_24" />
+
+        <ImageButton
+            android:id="@+id/deleteButton"
+            style="@style/voicemail_media_player_buttons"
+            android:layout_weight="1"
+            android:contentDescription="@string/a11y_voicemail_entry_delete"
+            app:srcCompat="@drawable/quantum_ic_delete_vd_theme_24" />
+    </LinearLayout>
+</LinearLayout>

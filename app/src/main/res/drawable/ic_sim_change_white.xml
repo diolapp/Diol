@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~  Copyright (C) 2019  The Diol App Team
+  ~
+  ~  This program is free software: you can redistribute it and/or modify
+  ~  it under the terms of the GNU General Public License as published by
+  ~  the Free Software Foundation, either version 3 of the License, or
+  ~  (at your option) any later version.
+  ~
+  ~  This program is distributed in the hope that it will be useful,
+  ~  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~  GNU General Public License for more details.
+  ~
+  ~  You should have received a copy of the GNU General Public License
+  ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ic_sim_change_white"
+    android:oneshot="true">
+    <item
+        android:drawable="@drawable/ic_sim_change_white_00"
+        android:duration="33" />
+    <item
+        android:drawable="@drawable/ic_sim_change_white_01"
+        android:duration="33" />
+    <item
+        android:drawable="@drawable/ic_sim_change_white_02"
+        android:duration="33" />
+    <item
+        android:drawable="@drawable/ic_sim_change_white_03"
+        android:duration="33" />
+    <item
+        android:drawable="@drawable/ic_sim_change_white_04"
+        android:duration="33" />
+    <item
+        android:drawable="@drawable/ic_sim_change_white_05"
+        android:duration="33" />
+    <item
+        android:drawable="@drawable/ic_sim_change_white_06"
+        android:duration="33" />
+    <item
+        android:drawable="@drawable/ic_sim_change_white_07"
+        android:duration="33" />
+    <item
+        android:drawable="@drawable/ic_sim_change_white_08"
+        android:duration="33" />
+    <item
+        android:drawable="@drawable/ic_sim_change_white_09"
+        android:duration="33" />
+    <item
+        android:drawable="@drawable/ic_sim_change_white_10"
+        android:duration="33" />
+    <item
+        android:drawable="@drawable/ic_sim_change_white_11"
+        android:duration="33" />
+    <item
+        android:drawable="@drawable/ic_sim_change_white_12"
+        android:duration="33" />
+    <item
+        android:drawable="@drawable/ic_sim_change_white_13"
+        android:duration="33" />
+    <item
+        android:drawable="@drawable/ic_sim_change_white_14"
+        android:duration="33" />
+    <item
+        android:drawable="@drawable/ic_sim_change_white_00"
+        android:duration="33" />
+</animation-list>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~  Copyright (C) 2019  The Diol App Team
+  ~
+  ~  This program is free software: you can redistribute it and/or modify
+  ~  it under the terms of the GNU General Public License as published by
+  ~  the Free Software Foundation, either version 3 of the License, or
+  ~  (at your option) any later version.
+  ~
+  ~  This program is distributed in the hope that it will be useful,
+  ~  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~  GNU General Public License for more details.
+  ~
+  ~  You should have received a copy of the GNU General Public License
+  ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  --><!-- layoutDirection set to ltr as a workaround to a framework bug (a bug) causing view with
+     layout_centerInParent inside a RelativeLayout to expand to screen width when RTL is active -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/item_background_material_borderless_dark"
+    android:layoutDirection="ltr">
+    <!-- The tab icon -->
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" />
+
+    <TextView
+        android:id="@+id/count"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/tab_unread_count_background_size"
+        android:layout_marginStart="@dimen/tab_unread_count_margin_left"
+        android:layout_marginTop="@dimen/tab_unread_count_margin_top"
+        android:layout_toStartOf="@id/icon"
+        android:background="@drawable/unread_count_background"
+        android:fontFamily="sans-serif-medium"
+        android:importantForAccessibility="no"
+        android:layoutDirection="locale"
+        android:minWidth="@dimen/tab_unread_count_background_size"
+        android:paddingLeft="@dimen/tab_unread_count_text_padding"
+        android:paddingRight="@dimen/tab_unread_count_text_padding"
+        android:textAlignment="center"
+        android:textColor="?attr/colorAccent"
+        android:textSize="@dimen/tab_unread_count_text_size" />
+</RelativeLayout>
+

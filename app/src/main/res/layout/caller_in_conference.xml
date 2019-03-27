@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~  Copyright (C) 2019  The Diol App Team
+  ~
+  ~  This program is free software: you can redistribute it and/or modify
+  ~  it under the terms of the GNU General Public License as published by
+  ~  the Free Software Foundation, either version 3 of the License, or
+  ~  (at your option) any later version.
+  ~
+  ~  This program is distributed in the hope that it will be useful,
+  ~  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~  GNU General Public License for more details.
+  ~
+  ~  You should have received a copy of the GNU General Public License
+  ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="64dp"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingStart="16dp"
+    android:paddingEnd="8dp">
+
+    <!-- Caller information -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/callerPhoto"
+            android:layout_width="@dimen/contact_browser_list_item_photo_size"
+            android:layout_height="@dimen/contact_browser_list_item_photo_size" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:paddingBottom="2dp">
+
+            <!-- Name or number of this caller -->
+            <TextView
+                android:id="@+id/conferenceCallerName"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="2dp"
+                android:singleLine="true"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/conference_call_manager_caller_name_text_color"
+                android:textSize="16sp" />
+
+            <!-- Number of this caller if name is supplied above -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="bottom"
+                android:orientation="horizontal">
+
+                <!-- Status (only support on hold now) -->
+                <TextView
+                    android:id="@+id/conferenceCallerStatus"
+                    style="@style/Dialer.TextAppearance.Secondary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:visibility="gone" />
+
+                <!-- Number -->
+                <TextView
+                    android:id="@+id/conferenceCallerNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:ellipsize="marquee"
+                    android:singleLine="true"
+                    android:textColor="@color/conference_call_manager_secondary_text_color"
+                    android:textSize="14sp" />
+
+            </LinearLayout>  <!-- End of caller number -->
+
+        </LinearLayout>  <!-- End of caller information -->
+
+    </LinearLayout>
+
+    <!-- "Separate" (i.e. "go private") button for this caller -->
+    <ImageView
+        android:id="@+id/conferenceCallerSeparate"
+        android:layout_width="@dimen/conference_call_manager_button_dimension"
+        android:layout_height="@dimen/conference_call_manager_button_dimension"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:clickable="true"
+        android:contentDescription="@string/goPrivate"
+        android:scaleType="center"
+        android:tint="?colorIcon"
+        app:srcCompat="@drawable/ic_call_split_white_24dp" />
+
+    <!-- "Disconnect" button which terminates the connection with this caller. -->
+    <ImageButton
+        android:id="@+id/conferenceCallerDisconnect"
+        android:layout_width="@dimen/conference_call_manager_button_dimension"
+        android:layout_height="@dimen/conference_call_manager_button_dimension"
+        android:layout_marginStart="8dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:clickable="true"
+        android:contentDescription="@string/conference_caller_disconnect_content_description"
+        android:scaleType="center"
+        android:tint="?colorIcon"
+        app:srcCompat="@drawable/quantum_ic_call_end_white_24" />
+
+</LinearLayout>  <!-- End of single list element -->

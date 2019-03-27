@@ -1,0 +1,37 @@
+<!--
+  ~  Copyright (C) 2019  The Diol App Team
+  ~
+  ~  This program is free software: you can redistribute it and/or modify
+  ~  it under the terms of the GNU General Public License as published by
+  ~  the Free Software Foundation, either version 3 of the License, or
+  ~  (at your option) any later version.
+  ~
+  ~  This program is distributed in the hope that it will be useful,
+  ~  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~  GNU General Public License for more details.
+  ~
+  ~  You should have received a copy of the GNU General Public License
+  ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <SwitchPreference
+        android:defaultValue="true"
+        android:key="@string/assisted_dialing_setting_toggle_key"
+        android:summary="@string/assisted_dialing_setting_summary"
+        android:title="@string/assisted_dialing_setting_title" />
+
+    <PreferenceCategory android:title="@string/assisted_dialing_setting_cc_category_title">
+        <ListPreference
+            android:defaultValue=""
+            android:dependency="@string/assisted_dialing_setting_toggle_key"
+            android:entries="@array/assisted_dialing_cc_entries"
+            android:entryValues="@array/assisted_dialing_cc_values"
+            android:key="@string/assisted_dialing_setting_cc_key"
+            android:summary="@string/assisted_dialing_setting_cc_default_summary_fallback"
+            android:title="@string/assisted_dialing_setting_cc_title" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

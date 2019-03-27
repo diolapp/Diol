@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~  Copyright (C) 2019  The Diol App Team
+  ~
+  ~  This program is free software: you can redistribute it and/or modify
+  ~  it under the terms of the GNU General Public License as published by
+  ~  the Free Software Foundation, either version 3 of the License, or
+  ~  (at your option) any later version.
+  ~
+  ~  This program is distributed in the hope that it will be useful,
+  ~  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~  GNU General Public License for more details.
+  ~
+  ~  You should have received a copy of the GNU General Public License
+  ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    android:keepScreenOn="true">
+
+    <SurfaceView
+        android:id="@+id/videocall_video_remote"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:importantForAccessibility="no" />
+
+    <TextView
+        android:id="@+id/videocall_remote_video_off"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:accessibilityTraversalBefore="@+id/videocall_speaker_button"
+        android:drawableTop="@drawable/quantum_ic_videocam_off_white_36"
+        android:drawablePadding="8dp"
+        android:drawableTint="?colorIcon"
+        android:gravity="center"
+        android:padding="64dp"
+        android:text="@string/videocall_remote_video_off"
+        android:textAppearance="@style/Dialer.Incall.TextAppearance"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <View
+        android:id="@+id/videocall_fullscreen_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/videocall_overlay_background_color" />
+
+    <FrameLayout
+        android:id="@+id/videocall_preview_root"
+        style="@style/VideoPreviewHolder">
+
+        <SurfaceView
+            android:id="@+id/videocall_video_preview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:importantForAccessibility="no" />
+
+        <ImageView
+            android:id="@+id/videocall_video_preview_off_overlay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:importantForAccessibility="no"
+            android:scaleType="center"
+            android:tint="?colorIcon"
+            android:tintMode="src_in"
+            android:visibility="gone"
+            app:srcCompat="@drawable/quantum_ic_videocam_off_vd_theme_24"
+            tools:visibility="visible" />
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/videocall_video_preview_mute_overlay"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_alignEnd="@id/videocall_preview_root"
+        android:layout_alignBottom="@id/videocall_preview_root"
+        android:layout_marginEnd="-8dp"
+        android:layout_marginBottom="-8dp"
+        android:background="@drawable/videocall_background_circle_white"
+        android:contentDescription="@string/incall_content_description_muted"
+        android:scaleType="center"
+        android:tint="@android:color/black"
+        android:visibility="gone"
+        app:srcCompat="@drawable/quantum_ic_mic_off_vd_theme_24"
+        tools:visibility="visible" />
+
+    <View
+        android:id="@+id/videocall_green_screen_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/videocall_overlay_background_color" />
+
+    <include
+        layout="@layout/videocall_controls_surfaceview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <FrameLayout
+        android:id="@+id/videocall_on_hold_banner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top" />
+
+</RelativeLayout>

@@ -1,0 +1,26 @@
+<!--
+  ~  Copyright (C) 2019  The Diol App Team
+  ~
+  ~  This program is free software: you can redistribute it and/or modify
+  ~  it under the terms of the GNU General Public License as published by
+  ~  the Free Software Foundation, either version 3 of the License, or
+  ~  (at your option) any later version.
+  ~
+  ~  This program is distributed in the hope that it will be useful,
+  ~  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~  GNU General Public License for more details.
+  ~
+  ~  You should have received a copy of the GNU General Public License
+  ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:tint="?attr/colorControlNormal"
+    android:viewportWidth="24.0"
+    android:viewportHeight="24.0">
+    <path
+        android:fillColor="@android:color/white"
+        android:pathData="M9.03,3l-1.11,7.07h2.62l0.7,-4.5h2.58L11.8,18.43L9.47,18.43L9.06,21h7.27l0.4,-2.57h-2.35l2,-12.86h2.58l-0.71,4.5h2.65L22,3L9.03,3zM8,5L4,5l-0.31,2h4L8,5zM7.39,9h-4l-0.31,2h4l0.31,-2zM8.31,17h-6L2,19h6l0.31,-2zM8.93,13h-6l-0.31,2h6.01l0.3,-2z" />
+</vector>

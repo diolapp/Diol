@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~  Copyright (C) 2019  The Diol App Team
+  ~
+  ~  This program is free software: you can redistribute it and/or modify
+  ~  it under the terms of the GNU General Public License as published by
+  ~  the Free Software Foundation, either version 3 of the License, or
+  ~  (at your option) any later version.
+  ~
+  ~  This program is distributed in the hope that it will be useful,
+  ~  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~  GNU General Public License for more details.
+  ~
+  ~  You should have received a copy of the GNU General Public License
+  ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+<resources xmlns:tools="http://schemas.android.com/tools"
+    tools:keep="
+    @string/spam_notification_title,
+    @string/spam_notification_title_230151,
+    @string/spam_notification_title_230152,
+    @string/spam_notification_title_230153,
+    @string/spam_notification_title_230154,
+    @string/spam_notification_title_230155,
+    @string/spam_notification_block_report_toast_text,
+    @string/spam_notification_block_report_toast_text_230151,
+    @string/spam_notification_block_report_toast_text_230152,
+    @string/spam_notification_block_report_toast_text_230153,
+    @string/spam_notification_block_report_toast_text_230154,
+    @string/spam_notification_block_report_toast_text_230155,
+    @string/spam_notification_not_spam_toast_text,
+    @string/spam_notification_not_spam_toast_text_230151,
+    @string/spam_notification_not_spam_toast_text_230152,
+    @string/spam_notification_not_spam_toast_text_230153,
+    @string/spam_notification_not_spam_toast_text_230154,
+    @string/spam_notification_not_spam_toast_text_230155,
+    @string/spam_notification_non_spam_call_collapsed_text,
+    @string/spam_notification_non_spam_call_collapsed_text_230151,
+    @string/spam_notification_non_spam_call_collapsed_text_230152,
+    @string/spam_notification_non_spam_call_collapsed_text_230153,
+    @string/spam_notification_non_spam_call_collapsed_text_230154,
+    @string/spam_notification_non_spam_call_collapsed_text_230155,
+    @string/spam_notification_non_spam_call_expanded_text,
+    @string/spam_notification_non_spam_call_expanded_text_230151,
+    @string/spam_notification_non_spam_call_expanded_text_230152,
+    @string/spam_notification_non_spam_call_expanded_text_230153,
+    @string/spam_notification_non_spam_call_expanded_text_230154,
+    @string/spam_notification_non_spam_call_expanded_text_230155,
+    @string/spam_notification_spam_call_collapsed_text,
+    @string/spam_notification_spam_call_collapsed_text_230151,
+    @string/spam_notification_spam_call_collapsed_text_230152,
+    @string/spam_notification_spam_call_collapsed_text_230153,
+    @string/spam_notification_spam_call_collapsed_text_230154,
+    @string/spam_notification_spam_call_collapsed_text_230155,
+    @string/spam_notification_dialog_block_report_spam_action_text,
+    @string/spam_notification_dialog_block_report_spam_action_text_230151,
+    @string/spam_notification_dialog_block_report_spam_action_text_230152,
+    @string/spam_notification_dialog_block_report_spam_action_text_230153,
+    @string/spam_notification_dialog_block_report_spam_action_text_230154,
+    @string/spam_notification_dialog_block_report_spam_action_text_230155,
+    @string/spam_notification_was_not_spam_action_text,
+    @string/spam_notification_was_not_spam_action_text_230151,
+    @string/spam_notification_was_not_spam_action_text_230152,
+    @string/spam_notification_was_not_spam_action_text_230153,
+    @string/spam_notification_was_not_spam_action_text_230154,
+    @string/spam_notification_was_not_spam_action_text_230155" />

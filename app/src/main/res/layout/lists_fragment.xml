@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~  Copyright (C) 2019  The Diol App Team
+  ~
+  ~  This program is free software: you can redistribute it and/or modify
+  ~  it under the terms of the GNU General Public License as published by
+  ~  the Free Software Foundation, either version 3 of the License, or
+  ~  (at your option) any later version.
+  ~
+  ~  This program is distributed in the hope that it will be useful,
+  ~  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~  GNU General Public License for more details.
+  ~
+  ~  You should have received a copy of the GNU General Public License
+  ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/lists_frame"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- TODO: Apply background color to ActionBar instead of a FrameLayout. For now, this is
+             the easiest way to preserve correct pane scrolling and searchbar collapse/expand
+             behaviors. -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/action_bar_height_large"
+            android:background="?attr/colorPrimary"
+            android:elevation="@dimen/tab_elevation" />
+
+        <app.diol.contacts.common.list.ViewPagerTabs
+            android:id="@+id/lists_pager_header"
+            style="@style/DialtactsActionBarTabTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/tab_height"
+            android:layout_gravity="top"
+            android:elevation="@dimen/tab_elevation"
+            android:orientation="horizontal"
+            android:textAllCaps="true" />
+
+        <app.diol.dialer.app.list.DialerViewPager
+            android:id="@+id/lists_pager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <!-- Sets android:importantForAccessibility="no" to avoid being announced when navigating with
+         talkback enabled. It will still be announced when user drag or drop contact onto it.
+         This is required since drag and drop event is only sent to views are visible when drag
+         starts. -->
+    <app.diol.dialer.app.list.RemoveView
+        android:id="@+id/remove_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tab_height"
+        android:layout_marginTop="@dimen/action_bar_height_large"
+        android:contentDescription="@string/remove_contact"
+        android:importantForAccessibility="no">
+
+        <LinearLayout
+            android:id="@+id/remove_view_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?attr/colorPrimary"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/remove_view_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:tint="?colorTextOnUnthemedDarkBackground"
+                app:srcCompat="@drawable/ic_remove" />
+
+            <TextView
+                android:id="@+id/remove_view_text"
+                style="@style/Dialer.TextAppearance.Primary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/remove_contact"
+                android:textColor="?colorTextOnUnthemedDarkBackground" />
+
+        </LinearLayout>
+
+    </app.diol.dialer.app.list.RemoveView>
+
+</FrameLayout>

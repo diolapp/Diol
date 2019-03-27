@@ -1,0 +1,4 @@
+-assumenosideeffects class app.diol.voicemail.impl.VvmLog {
+    public static void v(...);
+    public static void d(...);
+}

@@ -1,0 +1,121 @@
+/*
+ *  Copyright (C) 2019  The Diol App Team
+ *
+ *  This program is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
+package app.diol.incallui.audiomode;
+
+import android.content.Context;
+import android.media.AudioDeviceInfo;
+import android.media.AudioManager;
+import android.telecom.CallAudioState;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import app.diol.dialer.common.LogUtil;
+
+/**
+ * Proxy class for getting and setting the audio mode.
+ */
+public class AudioModeProvider {
+    private static final int SUPPORTED_AUDIO_ROUTE_ALL =
+            CallAudioState.ROUTE_EARPIECE
+                    | CallAudioState.ROUTE_BLUETOOTH
+                    | CallAudioState.ROUTE_WIRED_HEADSET
+                    | CallAudioState.ROUTE_SPEAKER;
+
+    private static final AudioModeProvider instance = new AudioModeProvider();
+    private final List<AudioModeListener> listeners = new ArrayList<>();
+    private CallAudioState audioState =
+            new CallAudioState(false, CallAudioState.ROUTE_EARPIECE, SUPPORTED_AUDIO_ROUTE_ALL);
+
+    public static AudioModeProvider getInstance() {
+        return instance;
+    }
+
+    private static int getApproximatedAudioRoute(Context context) {
+        AudioManager audioManager = context.getSystemService(AudioManager.class);
+        boolean hasBluetooth = false;
+        boolean hasHeadset = false;
+        for (AudioDeviceInfo info : audioManager.getDevices(AudioManager.GET_DEVICES_OUTPUTS)) {
+            switch (info.getType()) {
+                case AudioDeviceInfo.TYPE_BLUETOOTH_A2DP:
+                case AudioDeviceInfo.TYPE_BLUETOOTH_SCO:
+                    hasBluetooth = true;
+                    continue;
+                case AudioDeviceInfo.TYPE_WIRED_HEADSET:
+                    hasHeadset = true;
+                    continue;
+                default:
+                    continue;
+            }
+        }
+        if (hasBluetooth) {
+            LogUtil.i("AudioModeProvider.getApproximatedAudioRoute", "Routing to bluetooth");
+            return CallAudioState.ROUTE_BLUETOOTH;
+        }
+        if (hasHeadset) {
+            LogUtil.i("AudioModeProvider.getApproximatedAudioRoute", "Routing to headset");
+            return CallAudioState.ROUTE_WIRED_HEADSET;
+        }
+        LogUtil.i("AudioModeProvider.getApproximatedAudioRoute", "Routing to earpiece");
+        return CallAudioState.ROUTE_EARPIECE;
+    }
+
+    public void onAudioStateChanged(CallAudioState audioState) {
+        if (!this.audioState.equals(audioState)) {
+            this.audioState = audioState;
+            for (AudioModeListener listener : listeners) {
+                listener.onAudioStateChanged(audioState);
+            }
+        }
+    }
+
+    public void addListener(AudioModeListener listener) {
+        if (!listeners.contains(listener)) {
+            listeners.add(listener);
+            listener.onAudioStateChanged(audioState);
+        }
+    }
+
+    public void removeListener(AudioModeListener listener) {
+        listeners.remove(listener);
+    }
+
+    public CallAudioState getAudioState() {
+        return audioState;
+    }
+
+    /**
+     * Sets a approximated audio state before {@link #onAudioStateChanged} is called. Classes such as
+     * {@link app.diol.incallui.ProximitySensor} fetches the audio state before it is updated by
+     * telecom. This method attempts to guess the correct routing based on connected audio devices.
+     * The audio state may still be wrong on a second call due to a bug, telecom setting the
+     * route back to earpiece when a call ends.
+     */
+    public void initializeAudioState(Context context) {
+        onAudioStateChanged(
+                new CallAudioState(false, getApproximatedAudioRoute(context), SUPPORTED_AUDIO_ROUTE_ALL));
+    }
+
+    /**
+     * Notified on changes to audio mode.
+     */
+    public interface AudioModeListener {
+
+        void onAudioStateChanged(CallAudioState audioState);
+    }
+}

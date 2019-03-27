@@ -1,0 +1,51 @@
+<!--
+  ~  Copyright (C) 2019  The Diol App Team
+  ~
+  ~  This program is free software: you can redistribute it and/or modify
+  ~  it under the terms of the GNU General Public License as published by
+  ~  the Free Software Foundation, either version 3 of the License, or
+  ~  (at your option) any later version.
+  ~
+  ~  This program is distributed in the hope that it will be useful,
+  ~  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~  GNU General Public License for more details.
+  ~
+  ~  You should have received a copy of the GNU General Public License
+  ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:layout_gravity="bottom">
+
+    <TextView
+        android:id="@+id/audioroute_speaker"
+        style="@style/AudioRouteItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/quantum_ic_volume_up_grey600_24"
+        android:text="@string/audioroute_speaker"
+        android:textAlignment="viewStart" />
+
+    <TextView
+        android:id="@+id/audioroute_earpiece"
+        style="@style/AudioRouteItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_phone_audio_grey600_24dp"
+        android:text="@string/audioroute_phone"
+        android:textAlignment="viewStart" />
+
+    <TextView
+        android:id="@+id/audioroute_headset"
+        style="@style/AudioRouteItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/quantum_ic_headset_grey600_24"
+        android:text="@string/audioroute_headset"
+        android:textAlignment="viewStart" />
+
+</LinearLayout>

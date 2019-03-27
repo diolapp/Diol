@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~  Copyright (C) 2019  The Diol App Team
+  ~
+  ~  This program is free software: you can redistribute it and/or modify
+  ~  it under the terms of the GNU General Public License as published by
+  ~  the Free Software Foundation, either version 3 of the License, or
+  ~  (at your option) any later version.
+  ~
+  ~  This program is distributed in the hope that it will be useful,
+  ~  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~  GNU General Public License for more details.
+  ~
+  ~  You should have received a copy of the GNU General Public License
+  ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+<app.diol.dialer.callcomposer.GalleryGridItemView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:padding="@dimen/gallery_item_padding">
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gallery_grid_item_view_background"
+        android:outlineProvider="background"
+        android:scaleType="centerCrop" />
+
+    <FrameLayout
+        android:id="@+id/checkbox"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gallery_grid_checkbox_background"
+        android:outlineProvider="background"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="@dimen/gallery_check_size"
+            android:layout_height="@dimen/gallery_check_size"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/gallery_item_selected_drawable" />
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/gallery"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:background="@drawable/gallery_background"
+        android:outlineProvider="background"
+        android:scaleType="center"
+        android:visibility="gone"
+        app:srcCompat="@drawable/quantum_ic_photo_library_white_24" />
+</app.diol.dialer.callcomposer.GalleryGridItemView>

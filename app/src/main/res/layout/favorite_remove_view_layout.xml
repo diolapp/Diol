@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~  Copyright (C) 2019  The Diol App Team
+  ~
+  ~  This program is free software: you can redistribute it and/or modify
+  ~  it under the terms of the GNU General Public License as published by
+  ~  the Free Software Foundation, either version 3 of the License, or
+  ~  (at your option) any later version.
+  ~
+  ~  This program is distributed in the hope that it will be useful,
+  ~  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~  GNU General Public License for more details.
+  ~
+  ~  You should have received a copy of the GNU General Public License
+  ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+
+<!-- Sets android:importantForAccessibility="no" to avoid being announced when navigating with
+         talkback enabled. It will still be announced when user drag or drop contact onto it.
+         This is required since drag and drop event is only sent to views are visible when drag
+         starts. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/favorite_remove_view"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/expanded_search_bar_height"
+    android:background="?attr/colorPrimary"
+    android:contentDescription="@string/speed_dial_remove_favorites"
+    android:gravity="center"
+    android:importantForAccessibility="no"
+    android:orientation="horizontal"
+    android:visibility="invisible">
+
+    <ImageView
+        android:id="@+id/remove_view_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:tint="?colorIconOnUnthemedDarkBackground"
+        app:srcCompat="@drawable/quantum_ic_close_vd_theme_24" />
+
+    <TextView
+        android:id="@+id/remove_view_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/speed_dial_remove_favorites"
+        android:textColor="?colorTextOnUnthemedDarkBackground"
+        android:textSize="16sp" />
+</LinearLayout>

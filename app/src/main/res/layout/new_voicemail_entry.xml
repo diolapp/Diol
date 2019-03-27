@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~  Copyright (C) 2019  The Diol App Team
+  ~
+  ~  This program is free software: you can redistribute it and/or modify
+  ~  it under the terms of the GNU General Public License as published by
+  ~  the Free Software Foundation, either version 3 of the License, or
+  ~  (at your option) any later version.
+  ~
+  ~  This program is distributed in the hope that it will be useful,
+  ~  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~  GNU General Public License for more details.
+  ~
+  ~  You should have received a copy of the GNU General Public License
+  ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="72dp">
+
+    <app.diol.dialer.widget.ContactPhotoView
+        android:id="@+id/contact_photo_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="8dp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toStartOf="@+id/menu_button"
+        android:layout_toEndOf="@+id/contact_photo_view"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/primary_text"
+            style="@style/Dialer.TextAppearance.Primary.Ellipsize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:layout_marginEnd="6dp"
+            android:lineSpacingMultiplier="1.5" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            tools:ignore="UseCompoundDrawables">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="18dp"
+                android:layout_gravity="center_vertical"
+                android:importantForAccessibility="no"
+                android:tint="?attr/colorPrimary"
+                android:tintMode="multiply"
+                app:srcCompat="@drawable/quantum_ic_voicemail_vd_theme_24"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/secondary_text"
+                style="@style/Dialer.TextAppearance.Secondary.Ellipsize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:lineSpacingMultiplier="1.4" />
+        </LinearLayout>
+
+        <!-- TODO(a bug): Make text selectable -->
+        <TextView
+            android:id="@+id/transcription_text"
+            style="@style/Dialer.TextAppearance.Primary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="6dp"
+            android:textSize="@dimen/voicemail_transcription_text_size"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/transcription_branding"
+            style="@style/Dialer.TextAppearance.Secondary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/voicemail_transcription_branding_text"
+            android:visibility="gone" />
+
+        <app.diol.dialer.voicemail.listui.NewVoicemailMediaPlayerView
+            android:id="@+id/new_voicemail_media_player"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/menu_button"
+        android:layout_width="56dp"
+        android:layout_height="72dp"
+        android:layout_alignParentEnd="true"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/a11y_voicemail_entry_expand_menu"
+        android:scaleType="center"
+        android:tint="?colorIcon"
+        app:srcCompat="@drawable/quantum_ic_more_vert_vd_theme_24" />
+</RelativeLayout>

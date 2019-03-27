@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~  Copyright (C) 2019  The Diol App Team
+  ~
+  ~  This program is free software: you can redistribute it and/or modify
+  ~  it under the terms of the GNU General Public License as published by
+  ~  the Free Software Foundation, either version 3 of the License, or
+  ~  (at your option) any later version.
+  ~
+  ~  This program is distributed in the hope that it will be useful,
+  ~  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~  GNU General Public License for more details.
+  ~
+  ~  You should have received a copy of the GNU General Public License
+  ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/search_box_expanded"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/expanded_search_bar_height"
+    android:visibility="invisible">
+
+    <ImageButton
+        android:id="@+id/search_back_button"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="8dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/action_menu_back_from_search"
+        android:tint="?attr/colorPrimary"
+        app:srcCompat="@drawable/quantum_ic_arrow_back_vd_theme_24" />
+
+    <EditText
+        android:id="@+id/search_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="8dp"
+        android:layout_toStartOf="@+id/search_clear_button"
+        android:layout_toEndOf="@+id/search_back_button"
+        android:background="@null"
+        android:hint="@string/dialer_hint_find_contact"
+        android:imeOptions="flagNoExtractUi"
+        android:inputType="textFilter"
+        android:maxLines="1"
+        android:minHeight="48dp"
+        android:textColor="?android:attr/textColorSecondary"
+        android:textColorHint="?android:attr/textColorHint"
+        android:textCursorDrawable="@drawable/custom_cursor"
+        android:textSize="16sp" />
+
+    <ImageView
+        android:id="@+id/search_clear_button"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/description_clear_search"
+        android:scaleType="center"
+        android:tint="?colorIcon"
+        android:visibility="gone"
+        app:srcCompat="@drawable/quantum_ic_close_vd_theme_24" />
+</RelativeLayout>

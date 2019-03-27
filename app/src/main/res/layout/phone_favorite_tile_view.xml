@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~  Copyright (C) 2019  The Diol App Team
+  ~
+  ~  This program is free software: you can redistribute it and/or modify
+  ~  it under the terms of the GNU General Public License as published by
+  ~  the Free Software Foundation, either version 3 of the License, or
+  ~  (at your option) any later version.
+  ~
+  ~  This program is distributed in the hope that it will be useful,
+  ~  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~  GNU General Public License for more details.
+  ~
+  ~  You should have received a copy of the GNU General Public License
+  ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+<view xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/contact_tile"
+    class="app.diol.dialer.app.list.PhoneFavoriteSquareTileView"
+    android:paddingEnd="@dimen/contact_tile_divider_width"
+    android:paddingBottom="@dimen/contact_tile_divider_width">
+
+    <RelativeLayout
+        android:id="@+id/contact_favorite_card"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusable="true"
+        android:nextFocusRight="@+id/contact_tile_secondary_button">
+
+        <app.diol.contacts.common.widget.LayoutSuppressingImageView
+            android:id="@+id/contact_tile_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="6" />
+
+            <View
+                android:id="@+id/shadow_overlay"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="4"
+                android:background="@drawable/shadow_contact_photo" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/contact_tile_text_side_padding"
+            android:paddingEnd="@dimen/contact_tile_text_side_padding"
+            android:paddingBottom="@dimen/contact_tile_text_bottom_padding">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <app.diol.dialer.widget.BidiTextView
+                    android:id="@+id/contact_tile_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ellipsize="marquee"
+                    android:fadingEdge="horizontal"
+                    android:fadingEdgeLength="3dip"
+                    android:fontFamily="sans-serif-medium"
+                    android:singleLine="true"
+                    android:textAlignment="viewStart"
+                    android:textColor="?colorTextOnUnthemedDarkBackground"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/contact_star_icon"
+                    android:layout_width="@dimen/favorites_star_icon_size"
+                    android:layout_height="@dimen/favorites_star_icon_size"
+                    android:layout_marginStart="3dp"
+                    android:visibility="gone"
+                    app:srcCompat="@drawable/ic_star" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/contact_tile_phone_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="marquee"
+                android:fadingEdge="horizontal"
+                android:fadingEdgeLength="3dip"
+                android:fontFamily="sans-serif"
+                android:gravity="center_vertical"
+                android:singleLine="true"
+                android:textAlignment="viewStart"
+                android:textColor="?colorTextOnUnthemedDarkBackground"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/contact_tile_push_state"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?attr/selectableItemBackground"
+            android:importantForAccessibility="no" />
+
+        <!-- Wrap the ImageButton in a layout with a transparent background so the ripple has something to draw on -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent">
+
+            <ImageButton
+                android:id="@id/contact_tile_secondary_button"
+                android:layout_width="@dimen/contact_tile_info_button_height_and_width"
+                android:layout_height="@dimen/contact_tile_info_button_height_and_width"
+                android:layout_gravity="top|end"
+                android:background="@drawable/item_background_material_borderless_dark"
+                android:contentDescription="@string/description_view_contact_detail"
+                android:paddingStart="4dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="4dp"
+                android:paddingBottom="4dp"
+                android:scaleType="center"
+                app:srcCompat="@drawable/quantum_ic_more_vert_white_24" />
+
+        </FrameLayout>
+
+    </RelativeLayout>
+</view>

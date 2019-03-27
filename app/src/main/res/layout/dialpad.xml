@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~  Copyright (C) 2019  The Diol App Team
+  ~
+  ~  This program is free software: you can redistribute it and/or modify
+  ~  it under the terms of the GNU General Public License as published by
+  ~  the Free Software Foundation, either version 3 of the License, or
+  ~  (at your option) any later version.
+  ~
+  ~  This program is distributed in the hope that it will be useful,
+  ~  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~  GNU General Public License for more details.
+  ~
+  ~  You should have received a copy of the GNU General Public License
+  ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+
+<!-- Dialpad in the Phone app. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dialpad"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <Space style="@style/DialpadSpaceStyle" />
+
+        <include layout="@layout/dialpad_key_one" />
+
+        <include
+            android:id="@+id/two"
+            style="@style/DialpadKeyButtonStyle"
+            layout="@layout/dialpad_key" />
+
+        <include
+            android:id="@+id/three"
+            style="@style/DialpadKeyButtonStyle"
+            layout="@layout/dialpad_key" />
+
+        <Space style="@style/DialpadSpaceStyle" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <Space style="@style/DialpadSpaceStyle" />
+
+        <include
+            android:id="@+id/four"
+            style="@style/DialpadKeyButtonStyle"
+            layout="@layout/dialpad_key" />
+
+        <include
+            android:id="@+id/five"
+            style="@style/DialpadKeyButtonStyle"
+            layout="@layout/dialpad_key" />
+
+        <include
+            android:id="@+id/six"
+            style="@style/DialpadKeyButtonStyle"
+            layout="@layout/dialpad_key" />
+
+        <Space style="@style/DialpadSpaceStyle" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <Space style="@style/DialpadSpaceStyle" />
+
+        <include
+            android:id="@+id/seven"
+            style="@style/DialpadKeyButtonStyle"
+            layout="@layout/dialpad_key" />
+
+        <include
+            android:id="@+id/eight"
+            style="@style/DialpadKeyButtonStyle"
+            layout="@layout/dialpad_key" />
+
+        <include
+            android:id="@+id/nine"
+            style="@style/DialpadKeyButtonStyle"
+            layout="@layout/dialpad_key" />
+
+        <Space style="@style/DialpadSpaceStyle" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <Space style="@style/DialpadSpaceStyle" />
+
+        <include layout="@layout/dialpad_key_star" />
+
+        <include
+            android:id="@+id/zero"
+            layout="@layout/dialpad_key" />
+
+        <include layout="@layout/dialpad_key_pound" />
+
+        <Space style="@style/DialpadSpaceStyle" />
+    </LinearLayout>
+
+    <Space
+        android:id="@+id/end_call_space"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/dialpad_end_key_spacing" />
+</LinearLayout>

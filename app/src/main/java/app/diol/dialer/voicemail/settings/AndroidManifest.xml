@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~  Copyright (C) 2019  The Diol App Team
+  ~
+  ~  This program is free software: you can redistribute it and/or modify
+  ~  it under the terms of the GNU General Public License as published by
+  ~  the Free Software Foundation, either version 3 of the License, or
+  ~  (at your option) any later version.
+  ~
+  ~  This program is distributed in the hope that it will be useful,
+  ~  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~  GNU General Public License for more details.
+  ~
+  ~  You should have received a copy of the GNU General Public License
+  ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="app.diol.dialer.voicemail.settings">
+
+    <application>
+        <!-- Causes the "Voicemail" item under "Calls" setting to be hidden. The voicemail module will
+        be handling the settings. Has no effect before OC where dialer cannot provide voicemail
+        settings -->
+        <meta-data
+            android:name="android.telephony.HIDE_VOICEMAIL_SETTINGS_MENU"
+            android:value="true" />
+
+        <activity
+            android:name="app.diol.dialer.voicemail.settings.VoicemailChangePinActivity"
+            android:exported="false"
+            android:label="@string/voicemail_change_pin_preference_title"
+            android:parentActivityName="app.diol.dialer.app.settings.DialerSettingsActivity"
+            android:theme="@style/SettingsStyle"
+            android:windowSoftInputMode="stateVisible|adjustResize">
+            <intent-filter>
+                <action android:name="app.diol.dialer.action.CHANGE_PIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".RecordVoicemailGreetingActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:label="@string/voicemail_change_greeting_preference_title"
+            android:parentActivityName="app.diol.dialer.app.settings.DialerSettingsActivity"
+            android:theme="@style/SettingsStyle"></activity>
+        <activity
+            android:name=".CurrentVoicemailGreetingActivity"
+            android:exported="true"
+            android:label="@string/voicemail_change_greeting_preference_title"
+            android:parentActivityName="app.diol.dialer.app.settings.DialerSettingsActivity">
+            <!-- TODO(a bug): delete android:exported="true" closer to submitting  -->
+        </activity>
+    </application>
+
+</manifest>

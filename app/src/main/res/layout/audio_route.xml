@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~  Copyright (C) 2019  The Diol App Team
+  ~
+  ~  This program is free software: you can redistribute it and/or modify
+  ~  it under the terms of the GNU General Public License as published by
+  ~  the Free Software Foundation, either version 3 of the License, or
+  ~  (at your option) any later version.
+  ~
+  ~  This program is distributed in the hope that it will be useful,
+  ~  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~  GNU General Public License for more details.
+  ~
+  ~  You should have received a copy of the GNU General Public License
+  ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="180dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp">
+
+    <app.diol.incallui.rtt.impl.RttCheckableButton
+        android:id="@+id/audioroute_back"
+        style="@style/RttButton"
+        android:drawableStart="@drawable/quantum_ic_arrow_back_vd_theme_24"
+        android:text="@string/rtt_button_back" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/dialer_divider_line_color" />
+
+    <app.diol.incallui.rtt.impl.RttCheckableButton
+        android:id="@+id/audioroute_bluetooth"
+        style="@style/RttButton"
+        android:drawableStart="@drawable/quantum_ic_bluetooth_audio_vd_theme_24"
+        android:text="@string/audioroute_bluetooth" />
+
+    <app.diol.incallui.rtt.impl.RttCheckableButton
+        android:id="@+id/audioroute_speaker"
+        style="@style/RttButton"
+        android:drawableStart="@drawable/quantum_ic_volume_up_vd_theme_24"
+        android:text="@string/audioroute_speaker" />
+
+    <app.diol.incallui.rtt.impl.RttCheckableButton
+        android:id="@+id/audioroute_earpiece"
+        style="@style/RttButton"
+        android:drawableStart="@drawable/quantum_ic_phone_in_talk_vd_theme_24"
+        android:text="@string/audioroute_phone" />
+
+    <app.diol.incallui.rtt.impl.RttCheckableButton
+        android:id="@+id/audioroute_headset"
+        style="@style/RttButton"
+        android:drawableStart="@drawable/quantum_ic_headset_vd_theme_24"
+        android:text="@string/audioroute_headset" />
+</LinearLayout>
