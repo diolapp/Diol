@@ -1,6 +1,8 @@
 # Diol
 
-<img src="https://diol.app/images/logo.png" align="center" width="300" height="300" />
+<p align="center">
+    <img src="https://diol.app/images/logo.png" width="300" height="300" />
+</p>
 
 Diol is a free and open source dialer for Android based on the Android Open Source dialer with plans
 to integrate as many features as possible from the Google Phone app. Coming soon to Google Play and
