@@ -1,4 +1,5 @@
 # Diol
+[![Build Status](https://app.bitrise.io/app/fa29870c28939559/status.svg?token=n8fvosPAv81SzqKlDeZWMw)](https://app.bitrise.io/app/fa29870c28939559)
 
 <p align="center">
     <img src="https://diol.app/images/logo.png" width="300" height="300" />
